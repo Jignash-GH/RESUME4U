@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Resume Builder</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" href="https://www.freeiconspng.com/uploads/resume-icon-png-1.png" type="image/x-icon" />
+</head>
+<body>
+  <h2 class="p-5 m-1">RESUME4U - Professional Resume Builder</h2>
+  <div class="container py-5">
+    <div class="box-style">
+      <form id="resumeForm" class="mb-4">
+        <div class="mb-3">
+          <label for="photo" class="form-label">Upload Photo</label>
+          <input type="file" id="photo" class="form-control" accept="image/*" />
+        </div>
+        <div class="mb-3">
+          <label for="fullName" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="fullName" required />
+        </div>
+        <div class="mb-3">
+          <label for="objective" class="form-label">Objective</label>
+          <textarea class="form-control" id="objective" rows="2"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" required />
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone</label>
+          <input type="text" class="form-control" id="phone" required />
+        </div>
+        <div class="mb-3">
+          <label for="education" class="form-label">Education</label>
+          <textarea class="form-control" id="education" rows="3" required></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="skills" class="form-label">Skills</label>
+          <textarea class="form-control" id="skills" rows="3" required></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="certificate" class="form-label">Certifications</label>
+          <textarea class="form-control" id="certificate" rows="3" required></textarea>
+        </div>
+        <!-- FIXED: Changed interests ID -->
+        <div class="mb-3">
+          <label for="interests" class="form-label">Interests</label>
+          <textarea class="form-control" id="interests" rows="2"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="experience" class="form-label">Experience / Projects</label>
+          <textarea class="form-control" id="experience" rows="3" required></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="internships" class="form-label">Internships</label>
+          <textarea class="form-control" id="internships" rows="2"></textarea>
+        </div>
+        <!-- FIXED: Kept activities ID unique -->
+        <div class="mb-3">
+          <label for="activities" class="form-label">Activities</label>
+          <textarea class="form-control" id="activities" rows="2"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Generate Resume</button>
+      </form>
+
+      <div class="resume mx-auto d-none" id="resumeDisplay">
+        <div class="text-center mb-4">
+          <img id="photoPreview" class="profile-pic d-none" alt="Your photo" />
+          <h2 id="nameText"></h2>
+          <div id="contactText"></div>
+        </div>
+        <!-- Added conditional display classes -->
+        <div class="mb-4" id="objectiveSection">
+          <h3 class="section-heading">Objective</h3>
+          <div id="objectiveText"></div>
+        </div>
+        <div class="mb-4" id="experienceSection">
+          <h3 class="section-heading">Experience</h3>
+          <ul id="expList" class="list-unstyled"></ul>
+        </div>
+        <div class="mb-4" id="educationSection">
+          <h3 class="section-heading">Education</h3>
+          <ul id="eduList" class="list-unstyled"></ul>
+        </div>
+        <div class="mb-4" id="skillsSection">
+          <h3 class="section-heading">Skills</h3>
+          <div id="skillsText"></div>
+        </div>
+        <div class="mb-4" id="certificateSection">
+          <h3 class="section-heading">Certification</h3>
+          <div id="certificateText"></div>
+        </div>
+        <!-- FIXED: Interests section -->
+        <div class="mb-4" id="interestsSection">
+          <h3 class="section-heading">Interests</h3>
+          <div id="interestsText"></div>
+        </div>
+        <div class="mb-4" id="activitiesSection">
+          <h3 class="section-heading">Activities</h3>
+          <ul id="activitiesList" class="list-unstyled"></ul>
+        </div>
+        <div class="mb-4" id="internshipsSection">
+          <h3 class="section-heading">Internships</h3>
+          <div id="internshipsText"></div>
+        </div>
+      </div>
+
+      <div class="mt-4 d-none" id="downloadSection">
+        <button id="downloadBtn" class="btn btn-success w-100">Download PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="/script.js"></script>
+</body>
+</html>
