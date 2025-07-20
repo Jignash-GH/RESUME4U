@@ -15,18 +15,25 @@ body {
 }
 
 .resume {
-  background: #fff;
+  background: #ffffff;
   padding: 2rem;
   border-radius: 8px;
+  color: #333;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  max-width: 800px;
+  font-size: 14px;
 }
 
 .section-heading {
   text-transform: uppercase;
-  font-size: 0.9rem;
-  color: #555;
+  font-size: 16px;
+  color: #333;
   border-bottom: 2px solid #007bff;
   padding-bottom: 0.3rem;
   margin-bottom: 1rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
 }
 
 .profile-pic {
@@ -34,11 +41,74 @@ body {
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
+  border: 3px solid #007bff;
+  display: block;
+  margin: 0 auto 20px auto;
 }
 
 h2 {
-  font-family: "TikTok Sans", sans-serif;
+  font-family: "TikTok Sans", Arial, sans-serif;
   font-weight: bolder;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Enhanced text visibility */
+.resume h2,
+.resume h3,
+.resume p,
+.resume div,
+.resume li,
+.resume span {
+  color: #333 !important;
+  background: transparent !important;
+}
+
+.resume ul {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.resume li {
+  margin-bottom: 5px;
+  color: #333 !important;
+}
+
+/* Contact info styling */
+#contactText {
+  color: #666 !important;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+#nameText {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333 !important;
+}
+
+/* Section content styling */
+#objectiveText,
+#skillsText,
+#certificateText,
+#interestsText,
+#internshipsText {
+  color: #333 !important;
+  line-height: 1.5;
+  margin: 10px 0;
+  text-align: justify;
+}
+
+/* Ensure lists are visible */
+#expList li,
+#eduList li,
+#activitiesList li {
+  color: #333 !important;
+  margin-bottom: 8px;
+  line-height: 1.4;
 }
 
 @media (max-width: 768px) {
@@ -52,13 +122,79 @@ h2 {
   }
 }
 
-/* New print-specific styles */
+/* Critical print styles for PDF generation */
 @media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  body {
+    background: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .resume {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 20px !important;
+    width: 100% !important;
+    max-width: none !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+  
+  .resume *,
+  .resume h2,
+  .resume h3,
+  .resume p,
+  .resume div,
+  .resume li,
+  .resume span {
+    color: black !important;
+    background: transparent !important;
+  }
+  
+  .section-heading {
+    color: black !important;
+    border-bottom: 2px solid black !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+  }
+  
+  #nameText {
+    color: black !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
+  }
+  
+  #contactText {
+    color: black !important;
+    font-size: 14px !important;
+  }
+  
+  .profile-pic {
+    border: 2px solid black !important;
+    width: 100px !important;
+    height: 100px !important;
+  }
+  
+  .d-none {
+    display: none !important;
+  }
+  
+  /* Hide everything except resume */
   body * {
     visibility: hidden;
   }
   
-  .resume, .resume * {
+  .resume,
+  .resume * {
     visibility: visible;
   }
   
@@ -67,11 +203,5 @@ h2 {
     left: 0;
     top: 0;
     width: 100%;
-    padding: 15px;
-    box-shadow: none;
-  }
-  
-  .d-none {
-    display: none !important;
   }
 }
